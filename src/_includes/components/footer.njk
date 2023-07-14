@@ -1,1 +1,43 @@
-<footer>&copy; 2023 Plumbers Inc.</footer>
+<footer>
+    <div class="bg-primary-950 text-gray-100">
+        <div class="max-w-6xl mx-auto flex flex-row flex-wrap py-6">
+            <div class="basis-full md:basis-1/2 px-2">
+                <h4 class="border-b border-white font-serif pb-2 text-xl">Proudly serving the state of Massachusetts</h4>
+                <div class="h-96 my-4" id="google-map">
+
+                </div>
+            </div>
+            <div class="basis-full md:basis-1/4 px-2">
+                <h4 class="border-b border-white font-serif pb-2 text-xl">Navigate</h4>
+                <ul class="my-4">
+                    <li class="border-b border-white py-2">
+                        <a class="text-primary-300 hover:text-primary-100" href='/' aria-current>Home</a>
+                    </li>
+                    <li class="border-b border-white py-2">
+                        <a class="text-primary-300 hover:text-primary-100" href='#about'>About</a>
+                    </li>
+                    <li class="border-b border-white py-2">
+                        <a class="text-primary-300 hover:text-primary-100" href='#services'>Services</a>
+                    </li>
+                    <li class="border-b border-white py-2">
+                        <a class="text-primary-300 hover:text-primary-100" href='#contact'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="basis-full md:basis-1/4 px-2">
+                <a id="contact" name="contact"></a>
+                <h4 class="border-b border-white font-serif pb-2 text-xl">Get in touch</h4>
+                <p class="my-4">
+                    Phone: <a class="underline hover:text-primary-100" href="tel:{{ metadata.phone }}">{{ metadata.phone }}</a><br/>
+                    Email: <a class="underline hover:text-primary-100" href="mailto:{{ metadata.email }}">{{ metadata.email }}</a><br/>
+                    Address: {{ metadata.address }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-800 text-white">
+        <div class="max-w-6xl mx-auto py-6">
+            Copyright &copy; 2023 Plumbers Inc.
+        </div>
+    </div>
+</footer>

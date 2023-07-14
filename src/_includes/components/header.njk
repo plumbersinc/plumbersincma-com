@@ -1,8 +1,49 @@
-<header>
-    <nav>
-        <a href='/'>Home</a>
-        <a href='#about'>About</a>
-        <a href='#services'>Services</a>
-        <a href='#contact'>Contact</a>
+<header class="drop-shadow-lg">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end p-4">
+        <a class="basis-full md:basis-1/3 my-6 md:my-0" href='/'>
+            <img src="/images/logo.png" alt="Logo">
+        </a>
+        <div class="text-right">
+            <h2 class="text-3xl font-serif">
+                <a href="tel:{{ metadata.phone }}">
+                    <svg class="inline-block relative" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                    {{ metadata.phone }}
+                </a>
+            </h2>
+            <p class="leading-6">
+                {% for license in licenses %}
+                    {{ license.title }} <a class="text-primary-950 hover:text-primary-700 underline" href="{{ license.url }}" target="_blank">#{{ license.number }}</a><br/>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+    <nav class="bg-primary-950">
+        <div class="max-w-6xl mx-auto text-center">
+            <ul class="hidden md:flex max-w-6xl mx-auto justify-start">
+                <li class="inline-block p-4 bg-primary-700 aria-current:bg-primary-700" aria-current>
+                    <a class="text-white p-4" href='/'>Home</a>
+                </li>
+                <li class="inline-block p-4 hover:bg-primary-700 aria-current:bg-primary-700">
+                    <a class="text-white p-4" href='#about'>About</a>
+                </li>
+                <li class="inline-block p-4 hover:bg-primary-700 aria-current:bg-primary-700">
+                    <a class="text-white p-4" href='#services'>Services</a>
+                </li>
+                <li class="inline-block p-4 hover:bg-primary-700 aria-current:bg-primary-700">
+                    <a class="text-white p-4" href='#recent-works'>Recent Works</a>
+                </li>
+                <li class="inline-block p-4 hover:bg-primary-700 aria-current:bg-primary-700">
+                    <a class="text-white p-4" href='#contact'>Contact</a>
+                </li>
+            </ul>
+            <select id="mobile-nav" class="inline-block md:hidden mx-2 px-4 py-2 my-4 w-4/5 mx-auto">
+                <option>Go to...</option>
+                <option value='top'>Home</option>
+                <option value='about'>About</option>
+                <option value='services'>Services</option>
+                <option value='recent-works'>Recent Works</option>
+                <option value='contact'>Contact</option>
+            </select>
+        </div>
     </nav>
 </header>
