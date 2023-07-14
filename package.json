@@ -1,0 +1,41 @@
+{
+  "name": "plumbersincma.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "css:dir": "mkdir -p _site/styles",
+    "css:build": "npm run css:dir && lightningcss --bundle --nesting --minify --targets '> 0.25%, not IE 11' src/styles/index.css -o _site/styles/index.css",
+    "css:watch": "npm run css:build && onchange 'src/**/*.css' -- npm run css:build",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "start": "eleventy --serve & npm run css:watch",
+    "build": "npx @11ty/eleventy && npm run css:build",
+    "audit": "npx @sandworm/audit@latest --fail-on='[\"*.critical\", \"*.high\"]'",
+    "format": "npx prettier --write --ignore-unknown"
+  },
+  "keywords": [],
+  "author": "Kevin McClellan<kdmcclel@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "husky": "^8.0.3",
+    "lightningcss-cli": "^1.18.0",
+    "lint-staged": "^13.2.3",
+    "onchange": "^7.1.0"
+  },
+  "browserslist": [
+    "> 0.25%",
+    "not IE 11"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --allow-empty"
+    }
+  },
+  "lint-staged": {
+    "**/*": [
+      "yarn format",
+      "yarn audit"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ metadata.language }}">
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Eleventy" />
+    <meta name="color-scheme" content="light" />
+    <meta name="msapplication-TileColor" content="#F9FAFB" />
+    <meta name="theme-color" content="#F9FAFB" />
+    <meta name="view-transition" content="same-origin">
+    <!-- assets -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="canonical" href="{{ metadata.url }}">
+    <link rel="stylesheet" href="{{ '/styles/index.css' | url }}">
+    <!-- page data -->
+    <title>{% if title %}{{title}} :: {% endif %}{{metadata.title}} :: Massachusetts</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+    <meta name="keywords" content="{{ metadata.keywords }}">
+    <meta name="content" content="{{ metadata.keywords }}">
+    <meta name="property" content="{{ metadata.keywords }}">
+    <!-- OG -->
+    <meta property="og:site_name" content="{{ metadata.site }}">
+    <meta property="og:url" content="{{ metadata.url }}">
+    <meta property="og:title" content="{{ title or metadata.title }}">
+    <meta property="og:description" content="{{ description or metadata.description }}">
+    <meta property="og:image" content="{{ metadata.social.img }}">
+    </head>
+
+    <body>
+        {% include "components/header.njk" %}
+        {% block content %}{% endblock %}
+        {% include "components/footer.njk" %}
+    </body>
+</html>
