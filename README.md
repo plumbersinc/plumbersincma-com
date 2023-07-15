@@ -1,6 +1,6 @@
 # plumbersinc.ma
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/798d7bca-51b9-4089-a39c-62d86e3ecc25/deploy-status)](https://app.netlify.com/sites/nimble-seahorse-55c572/deploys)
 
 The commercial website of Plumbers Inc. This website is created using:
 
