@@ -1,5 +1,5 @@
 {%- for item in carousel -%}
 <li class="glide__slide">
-    {% image "public"+item.src, item.alt %}
+    {% carousel "public"+item.src, item.alt %}
 </li>
 {%- endfor -%}
