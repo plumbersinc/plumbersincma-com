@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="{{ '/styles/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/styles/glide.core.css' | url }}">
+    <link rel="stylesheet" href="{{ '/styles/glide.core.min.css' | url }}">
     <link rel="stylesheet" href="{{ '/styles/glightbox.min.css' | url }}">
     <!-- page data -->
     <title>{% if title %}{{title}} :: {% endif %}{{metadata.title}} :: Massachusetts</title>
@@ -33,7 +33,7 @@
     <script type="text/javascript" charset="UTF-8" src="{{ '/js/glide.min.js' | url }}"></script>
     <script type="text/javascript" charset="UTF-8" src="{{ '/js/glightbox.min.js' | url }}"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-117702205-2"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id={{ env.GOOGLE_TAG_ID}}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
