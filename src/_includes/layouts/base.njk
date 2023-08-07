@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="{{ '/styles/index.css' | url }}">
     <link rel="stylesheet" href="{{ '/styles/glide.core.css' | url }}">
+    <link rel="stylesheet" href="{{ '/styles/glightbox.min.css' | url }}">
     <!-- page data -->
     <title>{% if title %}{{title}} :: {% endif %}{{metadata.title}} :: Massachusetts</title>
     <meta name="description" content="{{ description or metadata.description }}">
@@ -30,6 +31,7 @@
     <meta property="og:description" content="{{ description or metadata.description }}">
     <meta property="og:image" content="{{ metadata.logo }}">
     <script type="text/javascript" charset="UTF-8" src="{{ '/js/glide.min.js' | url }}"></script>
+    <script type="text/javascript" charset="UTF-8" src="{{ '/js/glightbox.min.js' | url }}"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-117702205-2"></script>
     <script>
@@ -37,7 +39,7 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'UA-117702205-2');
+        gtag('config', '{{ env.GOOGLE_TAG_ID}}');
     </script>
     </head>
 
@@ -46,10 +48,10 @@
         {% block content %}{% endblock %}
         {% include "components/footer.njk" %}
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmWKL8svkWuaVFZVTRM08Kz_vACZR5NVQ&libraries=places"></script>
-        <script type="text/javascript" charset="UTF-8" src="{{ '/js/map.js' | url }}"></script>
-        <script type="text/javascript" charset="UTF-8" src="{{ '/js/gallery.js' | url }}"></script>
-        <script type="text/javascript" charset="UTF-8" src="{{ '/js/carousel.js' | url }}"></script>
-        <script type="text/javascript" charset="UTF-8" src="{{ '/js/nav.js' | url }}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ env.GOOGLE_MAPS_KEY }}&libraries=places"></script>
+        <script type="text/javascript" charset="UTF-8" src="{{ '/scripts/map.js' | url }}"></script>
+        <script type="text/javascript" charset="UTF-8" src="{{ '/scripts/gallery.js' | url }}"></script>
+        <script type="text/javascript" charset="UTF-8" src="{{ '/scripts/carousel.js' | url }}"></script>
+        <script type="text/javascript" charset="UTF-8" src="{{ '/scripts/nav.js' | url }}"></script>
     </body>
 </html>

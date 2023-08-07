@@ -8,15 +8,7 @@ title: Home
         <div class="glide drop-shadow">
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
-                <li class="glide__slide">
-                    <img src="/images/tubing.jpg" alt="Tubing"/>
-                </li>
-                <li class="glide__slide">
-                    <img class="" src="/images/pipes.jpg" alt="Pipes"/>
-                </li>
-                <li class="glide__slide">
-                    <img class="" src="/images/tools.jpg" alt="Tools"/>
-                </li>
+                    {% include "components/carousel-list.njk" %}
                 </ul>
             </div>
             <div class="glide__arrows absolute top-glide-control flex justify-between w-full px-2" data-glide-el="controls">
@@ -93,14 +85,7 @@ title: Home
             <h2 class="inline-block border-b-2 border-primary-950 text-2xl pb-2 -mb-px font-serif font-bold">Our Recent Works</h2>
         </div>
         <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
-            {% for image in gallery %}
-            <div class="overflow-hidden relative group hover:cursor-pointer w-full aspect-4/3">
-                <div class="absolute z-10 flex items-center justify-center invisible group-hover:visible w-full h-full top-0 left-0 bg-gray-900 opacity-50">
-                    <svg class="h-24 w-24 fill-gray-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"/></svg>
-                </div>
-                <img src="{{image.src}}" alt="{{image.alt}}" class="object-cover w-full h-full group-hover:scale-150 transition-all"/>
-            </div>
-            {% endfor %}
+            {% include "components/gallery-list.njk" %}
         </div>
     </div>
 </section>
@@ -112,7 +97,7 @@ title: Home
             <svg class="h-12 fill-gray-400 hover:fill-gray-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/></svg>
         </button>
         <figure>
-            <img src="/images/tubing.jpg" alt="tubing" />
+            <<img src="/images/tubing.jpg" alt="tubing" />>
             <figcaption class="flex flex-row justify-between text-gray-100"></figcaption>
         </figure>
     </div>
